@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import psycopg2
 
 DB_NAME = "news"
