@@ -1,4 +1,4 @@
-# Udacity-Fullstack-Project 3 - Logs Analysis Project
+# Udacity-Fullstack - Logs Analysis Project
 
 This project is about creating a reporting tool that parse a database containing data about news articles. You can download the database and VM in the prereq section. This repo only containing the reporting tool.
 
