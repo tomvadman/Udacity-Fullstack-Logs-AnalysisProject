@@ -34,7 +34,7 @@ This project is about creating a reporting tool that parse a database containing
 * Download news_reporting.py and copy it to Vagrant Machine. Then run the news_reporting.py and wait for the result.
 
 
-### Outout from news_reporting.py
+### Output from news_reporting.py
 
 What are the most popular three articles of all time?
 
