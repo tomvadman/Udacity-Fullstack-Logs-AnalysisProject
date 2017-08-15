@@ -19,10 +19,12 @@ This project is about creating a reporting tool that parse a database containing
 # How to use this solution
 
 ### prereq
-* Setup this environment : https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0
+* Vagrant, python3, virtualbox, PSQL database
+* Setup the environment : https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0
 * Create a SQL view on Vagrant Machine (news_reporting.py uses NEWS_STATS_VIEW).
 
-``` CREATE VIEW NEWS_STATS_VIEW AS
+``` 
+    CREATE VIEW NEWS_STATS_VIEW AS
     SELECT articles.title,log.path,authors.name,log.status,log.time,date(log.time) as day
     FROM articles
     LEFT JOIN log ON log.path LIKE CONCAT('%', articles.slug ,'%')
