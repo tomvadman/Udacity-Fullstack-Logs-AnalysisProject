@@ -1,6 +1,6 @@
 # Udacity-Fullstack-Project 3 - Logs Analysis Project
 
-Your task is to create a reporting tool that prints out reports (in plain text) based on the data in the database. This reporting tool is a Python program using the psycopg2 module to connect to the database
+This project is about creating a reporting tool that parse a database containing data about news articles. You can download the database and VM in the prereq section. This repo only containing the reporting tool.
 
 # Overview 
 
@@ -29,3 +29,19 @@ Example:
 Example:
 
 * July 29, 2016 — 2.5% errors
+
+# How to use this solution
+
+### prereq
+* Setup this environment : https://classroom.udacity.com/nanodegrees/nd004/parts/8d3e23e1-9ab6-47eb-b4f3-d5dc7ef27bf0/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0
+* Create a SQL view on Vagrant Machine (news_reporting.py uses NEWS_STATS_VIEW).
+
+``` CREATE VIEW NEWS_STATS_VIEW AS
+    SELECT articles.title,log.path,authors.name,log.status,log.time,date(log.time) as day
+    FROM articles
+    LEFT JOIN log ON log.path LIKE CONCAT('%', articles.slug ,'%')
+    JOIN authors ON authors.id = articles.author;
+ ```
+### Run reporting Tool
+* Download news_reporting.py and copy it to Vagrant Machine. Then run the news_reporting.py and wait for the result.
+
